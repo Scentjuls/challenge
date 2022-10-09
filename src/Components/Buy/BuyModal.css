@@ -1,0 +1,172 @@
+* {
+  font-size: 18px;
+}
+
+.modal--overlay {
+  z-index: 11;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 110%;
+  background: rgba(0, 0, 0, 0.6);
+  box-shadow: 10px 10px 10px rgba(227, 227, 227, 0.25);
+  opacity: 1;
+  transition: all 0.3s;
+  pointer-events: none;
+  transition: all 0.3s;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.modal--container {
+  z-index: 12;
+  background: #ffffff;
+  width: 100%;
+  position: absolute;
+  top: 10%;
+  max-width: 800px;
+  transition: all 0.3s;
+  pointer-events: none;
+  opacity: 0;
+  overflow-x: auto;
+  transform: translate(0, 0);
+  pointer-events: auto;
+  opacity: 1;
+  overflow-y: auto;
+  padding: 40px;
+}
+
+.modal-head {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  height: 30px;
+  align-items: center;
+}
+
+.modal-head p {
+  font-size: 24px;
+}
+
+.modal-body {
+  display: flex;
+  justify-content: space-between;
+}
+
+.order-image {
+  width: 60px;
+  height: 60px;
+  margin: 0 10px 20px 0;
+}
+
+.order-details {
+  display: flex;
+}
+
+.sign-container {
+  width: 30px;
+  height: 30px;
+  background-color: #b9b9b9;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.sign-container:not(:last-child),
+input {
+  margin-right: 10px;
+}
+
+.sign-container {
+  padding: 8px;
+}
+
+input {
+  width: 40px;
+  height: 30px;
+  border: 1px solid #808080;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
+
+.button {
+  line-height: 24px;
+  text-align: center;
+  width: 100px;
+  height: 40px;
+}
+
+.button:first-child {
+  margin-right: 10px;
+  background-color: #8e8ee9;
+}
+
+.cancel {
+  background-color: #b9b9b9;
+}
+
+.order-count {
+  display: flex;
+  margin-right: 40px;
+}
+
+.modal-total {
+  display: flex;
+  justify-content: space-between;
+  margin: 40px 0 60px 0;
+  height: 30px;
+  align-items: center;
+  font-weight: bold;
+}
+
+.orders {
+  display: flex;
+  align-items: center;
+}
+
+/* removing arrows from input field in chrome, edge and opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* removing arrows from input field in firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+.prices {
+  width: 70px;
+  text-align: right;
+}
+
+@media screen and (max-width: 480px) {
+  .modal--container {
+    left: initial;
+    top: 20%;
+  }
+  .order-image {
+    display: none;
+  }
+
+  .order-name {
+    white-space: nowrap;
+    width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
